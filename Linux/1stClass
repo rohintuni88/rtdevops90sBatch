@@ -71,5 +71,35 @@ cat --> create text or display text
     cat devops.txt ---> to display the text
 
 tac --> To display reverse text
-    
+
+If you want to copy the text from File1.txt and File2.txt into/ Merge File3.txt
+   then use cat
+     cat <File1.txt> <File2.txt> > <File3.txt>
+    here cat will create File3.txt also.    
   
+mkdir --> To make / Create dir
+dwr  --> d means directory
+-rw  --> - means File
+cd --> go into dir / folder
+cd .. --> to come back
+mkdir -p --> if dir already exits, it wont give error message, If no -p it give error like "File     already exits"
+rmdir <dir name>  --> to remove dir, if empty
+rmdir -r <dir name>  --> delete recursive folder / dir with files inside
+cp file.txt devops  --> copy the file into devops folder
+cp file.txt devops/aws.txt  --> copy file.txt into devops folder with rename file.txt to aws.txt
+mv --> move means Cut and paste or rename the files
+    eg: mv aws.txt devops
+mv <file.txt> <file1.txt> --> Moving to same folder with rename <file.txt> changed/rename to <file1.txt>
+
+How to downloa the Files from internet / other source
+wget <url>  --> To download the File
+  eg: wget www.googl.com
+
+grep command  --> find the text inside a file
+  grep <word-to-fild> <file name>
+  eg: grep linux <linuxFile.txt>
+Linux is a Case sensetive --> Linix and linux are diffrent
+grep -i linux <linuxFile.txt>  --> now It will display Linix and linux both text in a file
+grep -in <linuxFile.txt> --> display the line number with Linix and linux text in a file
+grep -inc <linuxFile.txt> -->  number of lines.  eg: 15
+grep -iv linux <linuxFile.txt>  --> displays all the text inside the file, except "Linux" or "linux"
