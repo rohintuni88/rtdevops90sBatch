@@ -1,0 +1,34 @@
+vi Editor Commands
+ Intially ESC Mode
+ : or Collon Mode
+ I Insert mode
+
+ In Collon Mode:
+:wq!--> Write and Quit
+:q --> Quit
+:q! --> Force Quit
+:set nu --> Line numbers
+:set nonu --> no display Line numbers
+:<Line-number> --> eg:  :line 20 --> cursor go to Line number 20
+:/ <Word to search> --> forward search, Press n key for next search
+?<Word to search> --> reverse / backword search, press n key for next word 
+:2d --> delete line 2
+:2,5d --> 2 - 5 lines numbers delete
+:%d --> To delete full content in a file.
+:noh --> no hilight the Word
+:4s/sbin/SBIN --> In 4th line replace sbin (small letter) to SBIN (Capital Letter)
+:4s/sbin/SBIN/g --> In 4th line replace sbin (small letter) to SBIN (Capital Letter), g means Global line / full line sbin to SBIN
+:%s/sin/SBIN --> replace sbin to SBIN only 1st Occurences
+:%s/sbin/SBIN/g --> full file replace with sbin to SBIN.
+
+In ESC Mode:
+ u --> Undo the chnages
+ Ctrl+r --> redo the changes.
+ Shift+g --> bottom of the line
+ gg --> Top of the file
+ yy--> copy the line
+ p - paste the copy line, under the line
+ shift+p --> paste the copy line and paste above line
+ 10p --> paste 10 Times 
+
+
