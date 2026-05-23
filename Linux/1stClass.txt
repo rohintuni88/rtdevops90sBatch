@@ -8,10 +8,10 @@ uname --all
 absolute path means Full path eg: c/user/Rohin/linux.txt
 relative path means Short path eg: /Rohin/linux.txt
 
-    8  mkdir 90sBatchDevOps  --> To create dir
-    9  cd 90sBatchDevOps/ --> to enter in to folder
-   10  ssh-keygen -f rtdevops90s   --> To create keygen for Key and Value pair / key pair
-   14  ssh -i rtdevops90s ec2-user@107.23.186.137  --> To connect ec2 instance / VM / Server
+   mkdir 90sBatchDevOps  --> To create dir
+   cd 90sBatchDevOps/ --> to enter in to folder
+   ssh-keygen -f rtdevops90s   --> To create keygen for Key and Value pair / key pair
+   ssh -i rtdevops90s ec2-user@107.23.186.137  --> To connect ec2 instance / VM / Server
    CRUD - Create, Read, Update and Delete
 
    ls -- view the list
@@ -106,4 +106,34 @@ grep -iv linux <linuxFile.txt>  --> displays all the text inside the file, excep
 
 Curl --> To display the file on the screen
     curl <url>
-curl -o  notes.txt <url>  --> the url context will save in notes.txt file, if no -o, it will display the contect on the screen.
+curl -o  notes.txt <url>  --> the url context  -o (Output) will save in notes.txt file, if no -o, it will display the contect on the screen.
+   we use for connection like API's etc
+curl <url> | grep linux
+
+head and tail commands:
+
+head <file.txt>
+curl <url> | head  --> it diaplays top 10 lines
+
+tail <file.txt>
+curel <url> | tail  --> it displays last 10 lines
+
+ Q)   if i want middles lines, then How? ex: line 10 to 14 lines
+SOL:  head -n 14 <file.txt> | tail -n 4
+
+Cut Command: to cut the URL or text in a file, but using delimiter
+ eg: echo "https://raw.githubusercontent.com/rohintuni88/rtdevops90sBatch/refs/heads/Linux/Linux/1stClass.txt" | cut -d "/" -f1
+     cut -d "/" -f1 /etc/passwd
+     cut -d "/" -f1,3 /etc/passwd
+
+awk Command:  similar to Cut command, but we no nned to count, we print last text eg: {print $NF}
+  eg: echo "https://raw.githubusercontent.com/rohintuni88/rtdevops90sBatch/refs/heads/Linux/Linux/1stClass.txt" | awk -F "/" '{print $NF}'
+   o/p:  1stClass.txt  --> It print the last text
+   if we want 1st Fragment --> '{print $1F}'
+   eg: awk -F ":" '{print $1F}' /etc/passwd  or cat /etc/passwd | awk -F ":" '{print $1F}'
+       cat /etc/passwd | awk -F ":" '{print $1F, $3F}'
+ Q)   To print User ID more than 900 using awk
+ SOL: awk -F ":" '$3 > 900 { print $1}' /etc/passwd
+      or
+      awk -F ":" '$3 >= 900 { print $1}' /etc/passwd
+      
