@@ -12,4 +12,64 @@ relative path means Short path eg: /Rohin/linux.txt
     9  cd 90sBatchDevOps/ --> to enter in to folder
    10  ssh-keygen -f rtdevops90s   --> To create keygen for Key and Value pair / key pair
    14  ssh -i rtdevops90s ec2-user@107.23.186.137  --> To connect ec2 instance / VM / Server
+   CRUD - Create, Read, Update and Delete
+
+   ls -- view the list
+   /home/ec2-user   --> Home dir in ec2 instance
+
+   Below are the root folders in Linux
+
+[ec2-user@ip-172-31-6-123 ~]$ pwd
+/home/ec2-user  -- Once login to ec2 server, User dir
+[ec2-user@ip-172-31-6-123 ~]$ cd  ..
+[ec2-user@ip-172-31-6-123 home]$ ls
+ec2-user
+[ec2-user@ip-172-31-6-123 home]$ cd ..
+[ec2-user@ip-172-31-6-123 /]$ pwd
+/ --> this is the root dir
+[ec2-user@ip-172-31-6-123 /]$ ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[ec2-user@ip-172-31-6-123 /]$ ls -lrt
+total 32
+drwxr-xr-x.   2 root root     6 Jan 30  2023 srv
+lrwxrwxrwx.   1 root root     8 Jan 30  2023 sbin -> usr/sbin
+drwxr-xr-x.   2 root root     6 Jan 30  2023 mnt
+drwxr-xr-x.   2 root root     6 Jan 30  2023 media
+lrwxrwxrwx.   1 root root     9 Jan 30  2023 lib64 -> usr/lib64
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx.   1 root root     7 Jan 30  2023 bin -> usr/bin
+drwxr-xr-x.   2 root root     6 May 15 00:22 local
+drwxr-xr-x.  12 root root   144 May 15 00:24 usr
+drwxr-xr-x.   3 root root    17 May 15 00:26 opt
+dr-xr-x---.   3 root root   103 May 15 00:26 root
+dr-xr-xr-x.   5 root root 16384 May 15 00:26 boot
+dr-xr-xr-x. 158 root root     0 May 23 06:01 proc
+dr-xr-xr-x.  13 root root     0 May 23 06:01 sys
+drwxr-xr-x.  19 root root   266 May 23 06:01 var
+drwxr-xr-x.  14 root root  3100 May 23 06:01 dev
+drwxr-xr-x.   3 root root    22 May 23 06:01 home
+drwxr-xr-x.  76 root root 16384 May 23 06:01 etc
+drwxr-xr-x.  28 root root   840 May 23 06:01 run
+drwxrwxrwt.  11 root root   220 May 23 06:13 tmp
+
+
+/home --> home dir for Linux users eg: /home/ec2-user
+/temp --> Temp files
+/etc --> Configurations
+/bin --> Commands or binaries insalled...
+
+ls -l --> Long listing detailed format
+ls -lr --> Reverse alpha order
+ls -ltr  --> Timestamp Latest at bottom
+ls -a --> hidden files display also
+touch --> to create empty file
+cat --> create text or display text 
+    cat > devops.txt  --> to enter the text
+       Hi, I am devOps
+       Ctrl+D --> to exit 
+    cat >> devops.txt   --> to add new text with old text or append the text
+    cat devops.txt ---> to display the text
+
+tac --> To display reverse text
+    
   
