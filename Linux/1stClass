@@ -1,0 +1,15 @@
+Linux Commands
+Command <Option> <Input>
+-h or --help
+uname - System info will display
+uname -a
+or
+uname --all
+absolute path means Full path eg: c/user/Rohin/linux.txt
+relative path means Short path eg: /Rohin/linux.txt
+
+    8  mkdir 90sBatchDevOps  --> To create dir
+    9  cd 90sBatchDevOps/ --> to enter in to folder
+   10  ssh-keygen -f rtdevops90s   --> To create keygen for Key and Value pair / key pair
+   14  ssh -i rtdevops90s ec2-user@107.23.186.137  --> To connect ec2 instance / VM / Server
+  
