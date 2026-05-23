@@ -91,7 +91,7 @@ mv --> move means Cut and paste or rename the files
     eg: mv aws.txt devops
 mv <file.txt> <file1.txt> --> Moving to same folder with rename <file.txt> changed/rename to <file1.txt>
 
-How to downloa the Files from internet / other source
+How to download the Files from internet / other source
 wget <url>  --> To download the File
   eg: wget www.googl.com
 
@@ -102,4 +102,8 @@ Linux is a Case sensetive --> Linix and linux are diffrent
 grep -i linux <linuxFile.txt>  --> now It will display Linix and linux both text in a file
 grep -in <linuxFile.txt> --> display the line number with Linix and linux text in a file
 grep -inc <linuxFile.txt> -->  number of lines.  eg: 15
-grep -iv linux <linuxFile.txt>  --> displays all the text inside the file, except "Linux" or "linux"
+grep -iv linux <linuxFile.txt>  --> displays all the text inside the file, except "Linux" or "linux".
+
+Curl --> To display the file on the screen
+    curl <url>
+curl -o  notes.txt <url>  --> the url context will save in notes.txt file, if no -o, it will display the contect on the screen.
