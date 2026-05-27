@@ -34,6 +34,8 @@ uid=1001(Ramesh) gid=1002(devops) groups=1002(devops),1003(developer),1004(teste
 
 How to provide Sudo access to Ramesh user: -
   wheel --> It is the group in linux for give the superuser access or sudo access.
-  usermod -aG wheel Ramesh
+  usermod -aG wheel 
+  
+  Now How to Delete Ramesh?
 
 
