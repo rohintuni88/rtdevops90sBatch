@@ -1,3 +1,39 @@
 User Management: AWS IAM 
 Groups, Roles, User and permissions
-useradd ramesh --> To create user
+useradd ramesh --> To create user and groups with same name.
+id ramesh --> to see user info, eg: uid=1001(Ramesh) gid=1001(Ramesh) groups=1001(Ramesh)
+every Linux user should have 1 Prymary group and 0 to many secondery groups.
+cat /etc/passwd --> To see all user info
+cat /etc/group --> To see group info
+groupadd devops --> To create group
+usermod -g devops ramesh --> To add uer in the group, -g means prymary group
+-G --> Secondery group
+-aG --> append secondery group
+groupadd developers
+groupadd testers
+usermod -G developers ramesh --> ramesh added in developers group as a Secondery group.
+usermod -aG testers ramesh --> ramesh added in testers group as a append Secondery group
+ eg: [root@ip-172-31-3-233 ec2-user]# id Ramesh
+uid=1001(Ramesh) gid=1002(devops) groups=1002(devops),1003(developer),1004(tester)
+   prymary group: devops
+   secondery group: developer and tester
+
+   Now setup the Password for Ramesh user
+   passwd Ramesh --> to setup password   eg: 123456789
+   Open new gitbash window
+    ssh Ramesh@<ip>
+    unable to login, because Linix is default Key based authentication
+    So, go to vi /etc/ssh/sshd_config   --> here all ssh Configurations for user logins
+    open the file --> update the PasswordAuthention no to yes.
+    then restart it --> systemctl restart sshd
+
+    I tried to Sudo su for ramesh.
+    [Ramesh@ip-172-31-3-233 ~]$ sudo su
+    [sudo] password for Ramesh:
+      Ramesh is not in the sudoers file.
+
+How to provide Sudo access to Ramesh user: -
+  wheel --> It is the group in linux for give the superuser access or sudo access.
+  usermod -aG wheel Ramesh
+
+
