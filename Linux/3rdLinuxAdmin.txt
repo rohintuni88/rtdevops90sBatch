@@ -34,8 +34,77 @@ uid=1001(Ramesh) gid=1002(devops) groups=1002(devops),1003(developer),1004(teste
 
 How to provide Sudo access to Ramesh user: -
   wheel --> It is the group in linux for give the superuser access or sudo access.
-  usermod -aG wheel 
+  usermod -aG wheel ramesh    --> Now ramesh is Sudo access
+  sudoers files ---> /etc/sudoers
   
-  Now How to Delete Ramesh?
+  Now We dont give all Admin /Fullaccess to Ramesh, We want gove only few Admin access.
+
+  1st --> Remove ramesh from wheel group
+         gpasswd -d wheel ramesh
+  2nd  --> ramesh is one can do useradd, usermod (to add in to groups)  only, Others operations cant do.
+
+       We have a /etc/sudoer.d   --> sudoer.d is dir in /etc folder.
+       Open the /etc/sudoers file, Copy the -->root    ALL=(ALL)       ALL
+       go to /etc/sudoer.d  --> cd /etc/sudoer.d
+       create vi ramesh file
+       Add root    ALL=(ALL)       ALL   and change it to --> ramesh    ALL=(ALL)       ALL
+       use command --> which useradd it shows --> /usr/sbin/useradd
+       update it to --> ramesh    ALL=(ALL)    /usr/sbin/useradd,  /usr/sbin/usermod
+       :wq! to save the file.
+       To verify vi editor syntax --> visudo -c 
+
+  Now, we need to give admin permissions to the group, who joined in this group, they are admins.
+     groupadd devops-user-manager  --> Goups created
+     now, /etc/sudoer.d  --> cd /etc/sudoer.d --> create vi devops-user-manager  --> %devops-user-manager   ALL=(ALL)    /usr/sbin/useradd,  /usr/sbin/usermod  --> % is for Group.
+     usermod -g devops-user-manager ramesh 
+     then ramesh have  /usr/sbin/useradd,  /usr/sbin/usermod this permissions.
+
+  Permissions: 
+     ls -lrt
+     -rw-r--r--. 1 root root  63 May 27 10:48 ramesh
+
+     -rw --> User / Ower position  U - User  
+     -r- --> User Prymary group    G - Group  
+     r-- --> Others                O - Others 
+
+     r --> 4
+     w --> 2
+     x --> 1
+
+     chmod --> To change the mode
+      eg: chmod g+wx ramesh.txt  --> giving write and exectute permissions to ramesh file
+          chmod 621 ramesh.txt
+
+  Owership Permissions:
+     chown  --> Owner also cant exectute this command, Only root user can do it.
+       chown user:<group-name> <file-name>
+        eg: chown :testers devops.txt  --> when you to chnage only group ownership
+            chown ramesh :devops devops.txt --> this is for change user ownership  -- > this one execute only in rootuser cd /home/ramesh 
+      
+      chown -R user:<group-name> <folder-name>  --> this is for folder with files inside the file.
+
+Key- based authentication:
+    mkdir ramesh
+    cd ramesh
+
+   1. ramesh should generate keys .pub and privater keys in local system  --> ssh-keygen -i ramesh
+   2. ramesh should send his public key to the Admin, Privare key should be with ramesh only.
+       Now go to Admin system or pass private key to admin 
+       Admin system: 
+         cd /home/ramesh
+   3. create .ssh folder in local laptop.  mkdir .ssh
+   4. create the authorized_keys file and paste the .pub key  --> vi authorized_keys open and paste the key.
+   5. authorized_keys should have the 600 permissions --> chmod 600 authorized_keys
+      now permissionsto the .ssh
+        chown -R ramesh:ramesh .ssh/
+        chmod 700 .ssh
+    now login to ramesh server
+     ssh -i ramesh ramesh@<ip>  --> this port is 22, ssh will carry the ramesh private key and username and ip address
+                            the request goes to server and check inside the cd /Home/ramesh filder Public key compares then login sucess.
+
+
+
+
+
 
 
