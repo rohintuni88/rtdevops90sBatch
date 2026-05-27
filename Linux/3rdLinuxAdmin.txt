@@ -102,6 +102,9 @@ Key- based authentication:
      ssh -i ramesh ramesh@<ip>  --> this port is 22, ssh will carry the ramesh private key and username and ip address
                             the request goes to server and check inside the cd /Home/ramesh filder Public key compares then login sucess.
 
+Delete the all accounts of Ramesh, once leving the compnay:
+
+
 
 
 
