@@ -1,0 +1,30 @@
+Tar and Find Commands
+tar command:
+  tar -czvf <name of zip>.gz <file /Folder>
+  eg: tar -czvf testzip.tar.gz devops1folder devops2folder   --> to do zip
+  c - creation
+  z - gz zip format
+  v - verbors, to display
+  f - File
+
+To unzip the folder / file
+  tar -xzvf <name of zip>.gz <file /Folder>
+  eg: tar -xzvf testzip.tar.gz --> to do unzip
+
+
+Find command: 
+ find <where to search> <conditions>
+ find / -name "passwd"  --> If i dont know where is "passwd" file in linux, we use this command
+    / --> root dir / full system
+    find / name "*swd"  --> if i dont know full name of the file, then i use ending last 3 words with *
+    find / name "pass*"  --> if i dont know full name of the file, then i use starting 3 words with *
+    find / iname "*swd"  --> if word in insensitive means Capital or small words.
+
+    For find dir --> find / -type d -name "devops"
+    to find a file --> find / -type f -name "devops"
+    
+
+    Now, how to delete the user from the company:
+
+    
+ 
