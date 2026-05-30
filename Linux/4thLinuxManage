@@ -1,4 +1,4 @@
-Tar and Find Commands
+Tar and Find Commands:
 tar command:
   tar -czvf <name of zip>.gz <file /Folder>
   eg: tar -czvf testzip.tar.gz devops1folder devops2folder   --> to do zip
@@ -7,7 +7,7 @@ tar command:
   v - verbors, to display
   f - File
 
-To unzip the folder / file
+To unzip the folder / file:
   tar -xzvf <name of zip>.gz <file /Folder>
   eg: tar -xzvf testzip.tar.gz --> to do unzip
 
@@ -26,5 +26,77 @@ Find command:
 
     Now, how to delete the user from the company:
 
-    
+    1. Lock the user and groups ramesh  
+       --> usermod -L ramesh,  if unlock --> usermod -U ramesh, To remove from groups --> gpasswd -d ramesh    testers
+
+    2. if he already login, do the force logout --> 
+        now check how many sessions running:
+            who | grep ramesh
+        Now force logout his session: 
+            pkill -u ramesh
+
+    3. take all folder / files  and Home dir in zip format for backup
+       need to creaate backup folder
+         mkdir backup_ramesh
+         tar -czvf /backup_ramesh/ramesh_dir.tar.gz /home/ramesh
+
+    4. remove this home dir and also remove user
+         userdel -r ramesh --> to remove user, also woll remove home dir.
+
+    5. check if he have sudoer access or not, if have remove it and also check all ramesh files in Linux system 
+         find / -user ramesh -not -path "/home/ramesh/*" -not -path "/proc/*"
+         also remove from wheel group for sudoers
+
+
+Package management: 
+ all packages are installed in /etc/yum.repos.d/
+ ls -lrt
+  o/p: amazon.linux.repo
+       kernel-livepatch.repo
+
+ cat amazon.linux.repo --> it will list all repos
+ dnf install <package name>
+ dnf remove <PN>
+ dnf update <PN>
+ yum install <PN>
+ dnf search <PN>
+ dnf info <PN>
+ dnf list installed | grep ngnix  --> display installed packges
+ dnf list avilable --> display NOT Installed repos /packages
+ dnf list avilable | WC -l  --> WC means word count
+ dnf repolist --> list repos avilable in system
+
+ Service Managemnt: 
+  sshd --> is a service, it running contionously
+  systemctl start service
+  systemctl stop service
+  systemctl restart service
+  systemctl enable service  --> it enable the auto start
+  systemctl disable service --> it disable the auto start
+  systemctl status service
+
+  Process Managemnt:
+  ps -- > to show running process of current user
+  ps aux
+  ps -ef
+  pid 
+  ps -u ec2-user 
+  top --> live update of process
+  top -u ec2-user
+  background process:
+     sleep 5 &  --> & means runs in background
+     sleep 5  --> run in forground
+
+to Kill process:
+kill <PID> --> teriminated
+ps -ef | grep sleep
+kill -9 --> force kill
+
+Network Managemnt:
+netstat -lntp  --> will display open ports in system / server
+
+If any application is not responding, how do you respond / troubleshoot:
+ systemctl status <Service Name>
+ netstat -lntp
+ ps -ef | grep  <service-name>
  
