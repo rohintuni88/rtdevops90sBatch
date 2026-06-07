@@ -3,4 +3,5 @@
   become: yes
   tasks:
     - name: hello ansible
-      debug: 
+      debug:
+        msg: "hello Ansible Playbook" 
