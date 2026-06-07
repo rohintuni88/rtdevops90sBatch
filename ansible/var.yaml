@@ -1,11 +1,11 @@
 -name: Varibales
- hosts: localhost
- connection: local
- vars:
-   name: "DevOps"
-   age: 25
- tasks:
+hosts: localhost
+connection: local
+vars:
+  name: "DevOps"
+  age: 25
+tasks:
   - debug:
       msg: "Hi {{name}}, and I am {{age}}"
-      
+
    
