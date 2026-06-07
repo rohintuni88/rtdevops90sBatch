@@ -1,0 +1,20 @@
+Sample XML Practice
+
+<Students>
+  <Student>
+    <FirstName>Rohin</FirstName>
+    <LastName>Tuni</LastName>
+    <Age>30</Age>
+    <City>Hyderabad</City>
+      <Address>
+        <PermAddress>
+           <Street>123 Main St</Street>
+           <ZipCode>500001</ZipCode>
+        </PermAddress>
+        <TempAddress>
+           <Street>456 Elm St</Street>
+           <ZipCode>500002</ZipCode>     
+        </TempAddress>
+     </Address>
+  </Student>
+ </Students>
