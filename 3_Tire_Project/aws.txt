@@ -1,0 +1,20 @@
+AWS Instnaces in ec2
+ ami = Amezon Michane image
+  eg: Redhat-9-DevOps-practice --> search in ami
+  RHEL-9  --> Latest
+  UN: ec2-user
+  pwd: DevOps321
+  - No Key pair based authentication, so we use --> ssh ec2-user@<IP Address> and give Password.
+
+
+Install MobaXterm Home Edition
+Done the expenses project
+ Front end
+ Backend
+ Database
+
+ URL :  https://github.com/daws-90s/expense-documentation/blob/main/03-frontend.md
+
+ DNS:
+
+

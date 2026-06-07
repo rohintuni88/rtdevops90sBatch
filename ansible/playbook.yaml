@@ -1,0 +1,6 @@
+- name: ansible playbook
+  hosts: frontend
+  become: yes
+  tasks:
+    - name: hello ansible
+      debug: 
