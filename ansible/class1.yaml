@@ -1,0 +1,23 @@
+
+
+- name: "Rohin"
+  age: 25
+  addresses:
+    - city: "New York"
+      state: "NY"
+      zip: "10001"
+
+    - city: "Los Angeles"
+      state: "CA"
+      zip: "90001"
+
+- name: "Anjali"
+  age: 25
+  addresses:
+    - city: "New York"
+      state: "NY"
+      zip: "10001"
+
+    - city: "Los Angeles"
+      state: "CA"
+      zip: "90001"    
