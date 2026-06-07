@@ -4,4 +4,4 @@
   tasks:
     - name: hello ansible
       debug:
-        msg: "hello ansible" 
+        msg: "hello Ansible Playbook" 
