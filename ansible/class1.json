@@ -1,0 +1,64 @@
+
+{
+  "students" : [
+
+        {
+            "firstName": "John",
+            "lastName": "Doe",
+            "addresses": [
+                {
+                    "type": "Permanent",
+                    "street": "123 Main St",
+                    "city": "Anytown",
+                    "state": "CA",
+                    "postalCode": "12345"
+                },
+                {
+                    "type": "Temporary",
+                    "street": "456 Elm St",
+                    "city": "Othertown",
+                    "state": "NY",
+                    "postalCode": "67890"
+                }
+            ]
+        },
+        {
+            "firstName": "Jane",
+            "lastName": "Smith",
+            "addresses": [
+                {
+                    "type": "Permanent",
+                    "street": "789 Oak St",
+                    "city": "Sometown",
+                    "state": "TX",
+                    "postalCode": "54321"
+                }
+            ]
+        },
+        {
+            "firstName": "Emily",
+            "lastName": "Johnson",
+            "addresses": [
+                {
+                    "type": "Permanent",
+                    "street": "321 Pine St",
+                    "city": "Anycity",
+                    "state": "FL",
+                    "postalCode": "98765"
+                },
+                {
+                    "type": "Temporary",
+                    "street": "654 Maple St",
+                    "city": "Othercity",
+                    "state": "WA",
+                    "postalCode": "43210"
+                }
+            ]
+        }
+
+    ]
+
+}
+
+
+
