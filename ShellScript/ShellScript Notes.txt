@@ -1,0 +1,32 @@
+#!/bin/bash    --> Shebang is for interpreter for verify the code, it is in the first line of the script
+bash script /shell script both are same.
+
+Variables:
+Way-1
+  VAR_NAME=VALUE  --> Variable syntax, no spaces around equals.
+  eg:  PERSON1=Ram
+       PERSON2-Sita
+       echo Hello $PERSON1
+       echo Hi $PERSON2
+
+Way-2
+  We can pass the values to Variable throught Command line arguments  --> Dynamic change values
+  eg: var.sh Ram Sita
+      so shell will take the valuse as $1 = RAM,  $2 = Sita
+      in Code:  PERSON1=$1
+                PERSON2=$2
+
+Way-3
+  To enter the values as a Username and Password prompt to hide the values
+  eg: read USER_NAME:: enter Username $USER_NAME
+      read -s PASSWORD: enter Password $PASSWORD   ---> s means silent
+
+TimeStamp:
+  TIMESTAMP=$(date)
+  echo $TIMESTAMP
+  echo $(date +%s)
+
+  START_TIME=$(date +%s)
+  sleep 10
+  END_TIME=$(date +%s)
+  TOTAL_TIME=$(($END_TIME-$START_TIME))
