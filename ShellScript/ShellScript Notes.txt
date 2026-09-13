@@ -1,0 +1,2 @@
+#!/bin/bash    --> Shebang is for interpreter for verify the code, it is in the first line of the script
+bash script /shell script both are same.
