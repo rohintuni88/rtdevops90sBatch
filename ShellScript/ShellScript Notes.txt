@@ -30,3 +30,13 @@ TimeStamp:
   sleep 10
   END_TIME=$(date +%s)
   TOTAL_TIME=$(($END_TIME-$START_TIME))
+
+  Specaial Variables in Shell:
+    $@ --> All Variables passed to the Script.
+           eg: echo "hello $@" 
+            sh spechial.sh Ram Sita Linux
+            o/p : Ram Sita Linux
+    @# --> Number os Variables passed
+          eg: echo "hello $#" 
+            sh spechial.sh Ram Sita Linux
+            o/p: 2
