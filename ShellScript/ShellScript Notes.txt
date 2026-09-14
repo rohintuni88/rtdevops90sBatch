@@ -96,5 +96,12 @@ TimeStamp:
 
     shell by default treats Variables as a String
     int, float, bool, decemal, long, string, char, double, array, arraylist, map, set etc...
-    
+
+
+    Conditions:
+    gt -- Greater than
+    lt -- Less than
+    eq -- equal
+    ne  -- not equal
+    ge -- Greater than or equal
 

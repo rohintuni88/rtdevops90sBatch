@@ -26,3 +26,13 @@ echo "Sum of $NUM1 and $NUM2 is: $SUM"
  echo "display ${MOVIES[3]}"
  echo $?
  echo $$
+
+
+ # Conditions:
+  $NUM=$1
+ if [ $NUM -ge 10]; then
+     echo "Correct"
+    else
+     echo "Incorrect"
+ fi
+   echo $NUM
