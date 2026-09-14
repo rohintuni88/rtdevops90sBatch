@@ -29,7 +29,7 @@ echo "Sum of $NUM1 and $NUM2 is: $SUM"
 
 
  # Conditions:
-  $NUM=$1
+    NUM=$1
  if [ $NUM -ge 10 ]; then
      echo "Correct"
      echo $NUM
