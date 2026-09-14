@@ -34,7 +34,7 @@ echo "Sum of $NUM1 and $NUM2 is: $SUM"
      echo "Correct"
       elif [ $NUM -gt 10 ]; then
         echo "-gt is greater than"
-      elif[ $NUM -lt 10 ]; then
+      elif [ $NUM -lt 10 ]; then
         echo "-lt is less than"
     else
       echo "Incorrect"
