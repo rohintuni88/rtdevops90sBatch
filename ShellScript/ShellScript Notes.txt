@@ -52,9 +52,49 @@ TimeStamp:
                                   $3 = Sita
     $USER --> It displays user Name, 
                eg: ec2-user
-              if you run with Sudo
+              if you run with Sudo sh hello.sh
                 it displays "root" 
                 eg: root
     $PWD --> which dir, Present working directory
     $HOME --> it displays USer Home directory
              
+    eg code:
+      
+       #!/bin/bash
+      echo "Hello World"
+      PERSON1=Ram
+      PERSON2=Sita
+      TIMESTAMP=$(date)
+      echo Hello $PERSON1
+      echo Hi $PERSON2
+      echo "Current date and time: $TIMESTAMP"
+      echo "Script arguments: $@, Argument count: $#"
+      echo "First argument: $1, Second argument: $2, Third argument: $3"
+      echo "Script name: $0"
+      echo "Current user: $USER"
+      echo "Home directory: $HOME"
+      echo "Current working directory: $PWD"
+
+   $$  --> it display the Process ID (PID)
+           eg: 1700
+
+   $! --> it displays the background PID, for sleep 10 &  (This sleep PID will display) 
+          eg: 1780
+
+   $LINENO  --> displays Line Number
+   $SECONDS  --> displays how much time script is executed.
+   $RANDOM --> To generate random Number
+
+   EXIT Codes: 
+   $?   --> It will tells the previous command sucess or not.
+   0 --> sucess
+   1 - 127 --> Failure
+
+
+
+   DataTypes:
+
+    shell by default treats Variables as a String
+    int, float, bool, decemal, long, string, char, double, array, arraylist, map, set etc...
+    
+
