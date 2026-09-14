@@ -40,3 +40,21 @@ TimeStamp:
           eg: echo "hello $#" 
             sh spechial.sh Ram Sita Linux
             o/p: 2
+
+    $0 --> It displays the script file Name
+           eg: hello.sh
+    
+    $1, $2, $3  --> these are arguments to displays
+                  eg: sh hello.sh Rohin Ram Sita
+                      o/p :  Rohin Ram Sita
+                        means $1 = Rohin
+                                $2 = Ram   
+                                  $3 = Sita
+    $USER --> It displays user Name, 
+               eg: ec2-user
+              if you run with Sudo
+                it displays "root" 
+                eg: root
+    $PWD --> which dir, Present working directory
+    $HOME --> it displays USer Home directory
+             
