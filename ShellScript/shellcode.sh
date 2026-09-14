@@ -32,9 +32,12 @@ echo "Sum of $NUM1 and $NUM2 is: $SUM"
     NUM=$1
  if [ $NUM -ge 10 ]; then
      echo "Correct"
-     echo $NUM
+      elif[ $NUM -gt 10 ]; then
+        echo "-gt is greater than"
+      elif[ $NUM -lt 10 ]; then
+        echo "-lt is less than"
+      echo $NUM
     else
-     echo "Incorrect"
+      echo "Incorrect"
      echo $NUM
  fi
-   echo $NUM
