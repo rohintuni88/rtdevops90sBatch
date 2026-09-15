@@ -105,3 +105,14 @@ TimeStamp:
     ne  -- not equal
     ge -- Greater than or equal
 
+
+Functions:
+  keep the repeted code in Functions, and call it.
+  less lines of code.
+
+  FUNC_NAME(){
+    Keep code
+  }
+
+  FUNC_NAME args1 args2
+
