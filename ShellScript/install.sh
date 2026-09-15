@@ -3,7 +3,7 @@ USERID=$(id -u)
 if [ $USERID -ne 0 ]; then
 {
  echo "inside if condition $USERID"
- exit 1
+ # exit 1
 } else {
     dnf install mysql -y
 }
@@ -15,4 +15,4 @@ if [ $? -ne 0]; then
 } else {
     echo "Sucess"
 }
-
+fi
