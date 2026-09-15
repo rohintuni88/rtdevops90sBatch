@@ -16,4 +16,5 @@ else
         echo " Installing fail $?"
     else 
         echo "Installing Sucess $?"
+    fi
 fi
