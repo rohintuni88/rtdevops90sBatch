@@ -9,10 +9,10 @@ if [ $USERID -ne 0 ]; then
 }
 fi
 
-if [ $? -ne 0]; then
+if [ $? -ne 0 ]; then
 {
-    echo "Fail"
-} else {
     echo "Sucess"
+} else {
+    echo "fail"
 }
 fi
