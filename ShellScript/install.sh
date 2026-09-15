@@ -9,10 +9,10 @@ if [ $USERID -ne 0 ]; then
 }
 fi
 
-if [ $? -ne 0 ]; then
+if [ $? -ne 1]; then
 {
     dnf install mysql -y
-    echo "Sucess"
+    echo "Sucess $?"
 } else {
     echo "fail"
 }
