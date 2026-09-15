@@ -9,7 +9,7 @@ fi
 
 #  Without Finctions, to install mysql
  dnf install mysql -y
-if [ $? -eq 0 ]; then 
+if [ $? -eq 1 ]; then 
     echo "Already Installed"
     dnf list installed mysql
     mysql --version
