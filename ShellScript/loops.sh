@@ -14,7 +14,7 @@ do
   echo insall $pack
   dnf install $pack -y  &>> $LOG_FILES
   dnf list installed $pack &>> $LOG_FILES
-  echo "installed done ...............$pack"
+  
   if [ $? -ne 0 ]; then
    dnf install $pack -y &>> $LOG_FILES
    echo "Installed ................ $pack"
