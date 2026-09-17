@@ -19,5 +19,10 @@ do
    echo "Installed .... $pack"
    else
    echo "Not Installed $pack"
+   fi
 done
+  if [ $? -ne 0 ]; then{
+   echo "Sucess"
+  }
+  fi
 
