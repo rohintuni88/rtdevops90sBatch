@@ -12,17 +12,17 @@ fi
 for pack in $@
 do
   echo insall $pack
-  dnf install $pack -y
-  dnf list installed $pack
+  dnf install $pack -y  &>> $LOG_FILES
+  dnf list installed $pack &>> $LOG_FILES
+  echo "installed done ...............$pack"
   if [ $? -ne 0 ]; then
-   dnf install $pack -y
-   echo "Installed .... $pack"
+   dnf install $pack -y &>> $LOG_FILES
+   echo "Installed ................ $pack"
    else
-   echo "Not Installed $pack"
+   echo "Not Installed ..............$pack"
    fi
 done
-  if [ $? -ne 0 ]; then{
+  if [ $? -ne 0 ]; then
    echo "Sucess"
-  }
   fi
 
