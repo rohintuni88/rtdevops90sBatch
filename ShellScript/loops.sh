@@ -12,7 +12,7 @@ fi
 
 for pack in $@
 do
-  echo "insall $pack  &>> $LOG_FILES" | tee -a $LOG_FILES
+  echo "insall $pack"  &>> $LOG_FILES | tee -a $LOG_FILES
   dnf install $pack -y  &>> $LOG_FILES
   dnf list installed $pack &>> $LOG_FILES
   
