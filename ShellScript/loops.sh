@@ -4,7 +4,7 @@ USERID=$(id -u)
 LOG_FOLDER=var/log/shell
 LOG_FILES="$LOG_FOLDER/$0.log"
 
-if [$USERID -ne 0]; then
+if [ $USERID -ne 0 ]; then
   echo "USE Sudo user"
   exit 1
 fi
