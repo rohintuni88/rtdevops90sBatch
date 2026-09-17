@@ -1,0 +1,168 @@
+#!/bin/bash    --> Shebang is for interpreter for verify the code, it is in the first line of the script
+bash script /shell script both are same.
+
+Variables:
+Way-1
+  VAR_NAME=VALUE  --> Variable syntax, no spaces around equals.
+  eg:  PERSON1=Ram
+       PERSON2-Sita
+       echo Hello $PERSON1
+       echo Hi $PERSON2
+
+Way-2
+  We can pass the values to Variable throught Command line arguments  --> Dynamic change values
+  eg: var.sh Ram Sita
+      so shell will take the valuse as $1 = RAM,  $2 = Sita
+      in Code:  PERSON1=$1
+                PERSON2=$2
+
+Way-3
+  To enter the values as a Username and Password prompt to hide the values
+  eg: read USER_NAME:: enter Username $USER_NAME
+      read -s PASSWORD: enter Password $PASSWORD   ---> s means silent
+
+TimeStamp:
+  TIMESTAMP=$(date)
+  echo $TIMESTAMP
+  echo $(date +%s)
+
+  START_TIME=$(date +%s)
+  sleep 10
+  END_TIME=$(date +%s)
+  TOTAL_TIME=$(($END_TIME-$START_TIME))
+
+  Specaial Variables in Shell:
+    $@ --> All Variables passed to the Script.
+           eg: echo "hello $@" 
+            sh spechial.sh Ram Sita Linux
+            o/p : Ram Sita Linux
+    @# --> Number os Variables passed
+          eg: echo "hello $#" 
+            sh spechial.sh Ram Sita Linux
+            o/p: 2
+
+    $0 --> It displays the script file Name
+           eg: hello.sh
+    
+    $1, $2, $3  --> these are arguments to displays
+                  eg: sh hello.sh Rohin Ram Sita
+                      o/p :  Rohin Ram Sita
+                        means $1 = Rohin
+                                $2 = Ram   
+                                  $3 = Sita
+    $USER --> It displays user Name, 
+               eg: ec2-user
+              if you run with Sudo sh hello.sh
+                it displays "root" 
+                eg: root
+    $PWD --> which dir, Present working directory
+    $HOME --> it displays USer Home directory
+             
+    eg code:
+      
+       #!/bin/bash
+      echo "Hello World"
+      PERSON1=Ram
+      PERSON2=Sita
+      TIMESTAMP=$(date)
+      echo Hello $PERSON1
+      echo Hi $PERSON2
+      echo "Current date and time: $TIMESTAMP"
+      echo "Script arguments: $@, Argument count: $#"
+      echo "First argument: $1, Second argument: $2, Third argument: $3"
+      echo "Script name: $0"
+      echo "Current user: $USER"
+      echo "Home directory: $HOME"
+      echo "Current working directory: $PWD"
+
+   $$  --> it display the Process ID (PID)
+           eg: 1700
+
+   $! --> it displays the background PID, for sleep 10 &  (This sleep PID will display) 
+          eg: 1780
+
+   $LINENO  --> displays Line Number
+   $SECONDS  --> displays how much time script is executed.
+   $RANDOM --> To generate random Number
+
+   EXIT Codes: 
+   $?   --> It will tells the previous command sucess or not.
+   0 --> sucess
+   1 - 127 --> Failure
+
+
+
+   DataTypes:
+
+    shell by default treats Variables as a String
+    int, float, bool, decemal, long, string, char, double, array, arraylist, map, set etc...
+
+
+    Conditions:
+    gt -- Greater than
+    lt -- Less than
+    eq -- equal
+    ne  -- not equal
+    ge -- Greater than or equal
+
+
+Functions:
+  keep the repeted code in Functions, and call it.
+  less lines of code.
+
+  FUNC_NAME(){
+    Keep code
+  }
+
+  FUNC_NAME args1 args2
+
+
+ReDirections: 
+< --> Input
+> --> Output
+>> --> append to Output
+
+the Logs can store in .log file
+1 --> sucess, then only log can store
+2 --> Fail, then wont save
+
+ ls -l  1>Output.log
+ ls -l  2>Output.log
+
+ & --> Sucess /Fail
+ ls -l &> Output.log 
+
+ 
+ Logs:
+ LOG_FOLDER=/home/ec2-user/logsFolder
+ LOG_FILES="/$LOG_FOLDER/$0.log"    ==> $0 means Shell Script Name
+ in code we use --> dng install mysql -y  &>> $LOG_FILES
+or 
+ sudo mkdir var/logs/shellLogs
+ sudo chown -R ec2-user:ec2-user var/logs/shellLogs    ==> Giving permision to ec2-user to create
+ sudo chmod 755 var/logs/shellLogs    ==> ec2-use have full access.
+
+ if we want to write / append the logs in Command screen as well as in Log files, then we use  "Tee" command
+ eg: echo "This is Tee Command -- Sucess" | tee -a $LOG_FILES
+    -a is append
+
+
+LOOPS:
+ for <expression>
+ do
+    statements
+ done
+
+ eg:  for i in {1..100}
+ do 
+   echo $i
+ done
+
+
+ COLOR CODES:
+
+ ex: echo -e "\e[31m Hello Rohin"    ==> Displays Red COLOR
+      32m, 33m, 34m etc
+      eg: echo -e "\e[32m Hello \e[0m Rohin"   ===> half text got color, Half no color
+
+  R="\e[31m"
