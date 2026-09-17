@@ -166,3 +166,17 @@ LOOPS:
       eg: echo -e "\e[32m Hello \e[0m Rohin"   ===> half text got color, Half no color
 
   R="\e[31m"
+
+
+  ERROR Handlings:
+  1) Expected ERROR: to catuch the erroe we use if loop Conditions
+  2) unexpected ERROR: eg: trap command
+
+  set -e --> by default shell wont exist when erroe occured, it will contioune the next code.
+     but when you use "set -e" command, when error occnured, it EXIT.
+
+  eg: set -e
+      echo "bellow error"
+      sdfasdfsdfgfdg
+      echo "finish"
+      trap 'echo "error at $LINENO", command: $BASH_COMMAND"' ERR

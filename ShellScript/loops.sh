@@ -28,3 +28,8 @@ done
    echo -e "$R Sucess"
   fi
 
+  set -e
+  echo "bellow error"
+  sdfasdfsdfgfdg
+  echo "finish"
+  trap 'echo "error at $LINENO", command: $BASH_COMMAND"' ERR
