@@ -12,7 +12,7 @@ fi
 
 for pack in $@
 do
-  echo "insall $pack"  &>> $LOG_FILES | tee -a $LOG_FILES
+  echo "$TIME_STAMP insall" $pack  &>> $LOG_FILES | tee -a $LOG_FILES
   dnf install $pack -y  &>> $LOG_FILES
   dnf list installed $pack &>> $LOG_FILES
   
@@ -20,7 +20,7 @@ do
    dnf install $pack -y &>> $LOG_FILES
    echo " $TIME_STAMP Installed ................ $pack"
    else
-   echo "Not Installed ..............$pack"
+   echo "$TIME_STAMP Not Installed ..............$pack"
    fi
 done
   if [ $? -ne 0 ]; then
