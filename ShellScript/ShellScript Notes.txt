@@ -157,3 +157,12 @@ LOOPS:
  do 
    echo $i
  done
+
+
+ COLOR CODES:
+
+ ex: echo -e "\e[31m Hello Rohin"    ==> Displays Red COLOR
+      32m, 33m, 34m etc
+      eg: echo -e "\e[32m Hello \e[0m Rohin"   ===> half text got color, Half no color
+
+  R="\e[31m"
