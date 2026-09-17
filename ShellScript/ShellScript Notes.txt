@@ -116,3 +116,44 @@ Functions:
 
   FUNC_NAME args1 args2
 
+
+ReDirections: 
+< --> Input
+> --> Output
+>> --> append to Output
+
+the Logs can store in .log file
+1 --> sucess, then only log can store
+2 --> Fail, then wont save
+
+ ls -l  1>Output.log
+ ls -l  2>Output.log
+
+ & --> Sucess /Fail
+ ls -l &> Output.log 
+
+ 
+ Logs:
+ LOG_FOLDER=/home/ec2-user/logsFolder
+ LOG_FILES="/$LOG_FOLDER/$0.log"    ==> $0 means Shell Script Name
+ in code we use --> dng install mysql -y  &>> $LOG_FILES
+or 
+ sudo mkdir var/logs/shellLogs
+ sudo chown -R ec2-user:ec2-user var/logs/shellLogs    ==> Giving permision to ec2-user to create
+ sudo chmod 755 var/logs/shellLogs    ==> ec2-use have full access.
+
+ if we want to write / append the logs in Command screen as well as in Log files, then we use  "Tee" command
+ eg: echo "This is Tee Command -- Sucess" | tee -a $LOG_FILES
+    -a is append
+
+
+LOOPS:
+ for <expression>
+ do
+    statements
+ done
+
+ eg:  for i in {1..100}
+ do 
+   echo $i
+ done
