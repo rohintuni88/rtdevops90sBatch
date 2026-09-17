@@ -13,7 +13,7 @@ fi
 for pack in $@
 do
   echo $TIME_STAMP "install" $pack  &>> $LOG_FILES | tee -a $LOG_FILES
-  dnf install $pack -y  &>> $LOG_FILES | tee -a $LOG_FILES
+  dnf remove $pack -y  &>> $LOG_FILES | tee -a $LOG_FILES
   dnf list installed $pack &>> $LOG_FILES | tee -a $LOG_FILES
   
   if [ $? -ne 0 ]; then
