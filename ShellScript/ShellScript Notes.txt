@@ -173,10 +173,15 @@ LOOPS:
   2) unexpected ERROR: eg: trap command
 
   set -e --> by default shell wont exist when erroe occured, it will contioune the next code.
-     but when you use "set -e" command, when error occnured, it EXIT.
+     but when you use "set -e" command, when error occnured, it EXIT. but we are using the Validate function (using if Conditions)
 
   eg: set -e
       echo "bellow error"
       sdfasdfsdfgfdg
       echo "finish"
       trap 'echo "error at $LINENO", command: $BASH_COMMAND"' ERR
+
+      this "trap" command will catuch the error with line number. 
+
+
+      Vim Editor cant work in ShellScript, thats whay we use SED Editor ==> Stream Line Editor
