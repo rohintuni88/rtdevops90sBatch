@@ -185,3 +185,30 @@ LOOPS:
 
 
       Vim Editor cant work in ShellScript, thats whay we use SED Editor ==> Stream Line Editor
+
+
+  IAM --> aws configure
+  iam user --> create user --> create access keys
+
+  aws configure --> config access, secret key, region
+
+  aws cli to launch instance
+
+  eg:  aws ec2 run-instances \
+    --image-id ami-0220d79f3f480ecf5 \
+    --instance-type t3.micro \
+    --security-groups myipv4 \
+    --tag-specifications \
+        'ResourceType=instance,Tags=[{Key=Name,Value=shellTest}]' \
+         --query 'Instances[0].InstanceId' \
+    --output text
+
+    o/p: i-016155e359ed1454e
+     Above command will create ec2 instance in console.
+
+--> instance id is very important for standard
+--> To Describe instance:  aws ec2 describe-instance --instance-ids i-016155e359ed1454e
+--> To query ip address: aws ec2 describe-instances --instance-ids i-07788102fa075ddd3 --query 'Reservations[*].Instances[*].PublicIpAddress' --output text
+
+
+
