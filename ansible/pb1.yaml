@@ -25,7 +25,6 @@
     - name: print lntp output
       debug:
         var: netstat_output.stdout_lines
-        msg: netstat_output.stdout_lines
 
 
 
