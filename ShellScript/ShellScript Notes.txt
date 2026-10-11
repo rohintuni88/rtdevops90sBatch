@@ -212,3 +212,6 @@ LOOPS:
 
 
 
+"shift" command is used to change position or removed 1st item of 1st item. so 2nd item becomes 1st item, 3rd item becomes 2nd item.
+
+
