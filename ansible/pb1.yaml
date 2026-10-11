@@ -1,5 +1,5 @@
 - name: Install nginx
-  hosts: frontend
+  hosts: local
   become: yes
   tasks:
     - name: Install nginx
@@ -13,7 +13,19 @@
         state: started
         enabled: yes 
 
-    - name: chesk status of nginx
+    - name: check status of nginx
       service:
         name: nginx
         state: started
+    
+    - name: check ports
+      command: netstat -lntp
+      register: netstat_output
+
+    - name: print lntp output
+      debug:
+        var: netstat_output.stdout_lines
+        msg: netstat_output.stdout_lines
+
+
+

@@ -7,5 +7,4 @@
   tasks:
   - debug:
       msg: "Hi {{name}}, and I am {{age}}"
-
    
