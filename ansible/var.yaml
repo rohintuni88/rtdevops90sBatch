@@ -1,10 +1,13 @@
 - name: varibales
-  hosts: localhost
+  hosts: frontend
   connection: local
   vars:
-    name: "DevOps"
+    name: "DevOps"    # play level variable
     age: 25
   tasks:
-  - debug:
+  - name: print some text
+    vars:
+      name: "DevOps with AIOps"   # Task level variable
+    debug:
       msg: "Hi {{name}}, and I am {{age}}"
    
