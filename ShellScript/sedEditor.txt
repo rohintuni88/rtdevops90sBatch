@@ -1,0 +1,58 @@
+sed Editor --> Stream Line Editor for Shell Editor like VIM /VI Editor
+    sed Editor if for Shell.
+    vi / VIM is for Humans.
+
+
+eg: cp /etc/passwd users
+    cat users
+    o/p:  
+[ ec2-user@ip-172-31-26-209 ~/shell-roboshopApp ]$ cat users
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+tss:x:59:59:Account used for TPM access:/:/sbin/nologin
+systemd-oom:x:995:995:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+polkitd:x:994:993:User for polkitd:/:/sbin/nologin
+sssd:x:993:992:User for sssd:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+chrony:x:992:991:chrony system user:/var/lib/chrony:/sbin/nologin
+maintuser:x:1000:1000:Local Maintenance User:/home/maintuser:/bin/bash
+ec2-user:x:1001:1001::/home/ec2-user:/bin/bash
+mongod:x:991:989:mongod:/var/lib/mongo:/bin/false
+
+
+
+Now i want to append "Hello" in 2nd line or after 1st line.
+
+sed '1a\Hello' users   ---> this will do Temp changes
+O/P:
+root:x:0:0:root:/root:/bin/bash
+Hello
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+
+
+If you want the perminent changes in a file
+  sed -i '1a\hello' users   --> a - after the line
+  sed -i '1i\hello' users   --> i - befor the line
+  sed -i 's/systemd/SYSTEMD/g --> change small letter systemd to SYSTEMD, s means substitution, g means global
+  sed '1d' users --> to delete the 1st line
+  sed '/shutdown/d' users --> to delete all shutdown word in the file.
+  sed '2c\Hi' users --> change/replace the line num2 text / context to Hi.
+  sed '/shutdown/d' users  --> delete the word shutdown
+  cat users
