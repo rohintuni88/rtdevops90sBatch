@@ -29,3 +29,14 @@ playbook.yaml
 
 debug:  --> To print th r text
 
+Variables Types:
+
+  inventory_vars
+  vars_files
+  host_vars  --> inside inventory.ini we mention Host variables: 
+    ex: [frontend]
+        198.6.5.90 COURSE: "This value is for NODE-1"
+
+        [frontend:vars]
+        COURSE: "this is common for all hosts inside frontend"
+                                                                     
