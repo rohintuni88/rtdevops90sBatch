@@ -1,6 +1,6 @@
 - name: conditons in Ansible
   hosts: localhost
-  connections: local
+  connection: local
   vars:
   num_live_sessions: 5
   tasks:
