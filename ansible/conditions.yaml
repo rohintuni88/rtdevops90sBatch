@@ -1,0 +1,10 @@
+- name: conditons in Ansible
+  hosts: localhost
+  connections: local
+  vars:
+    num_live_sessions: 5
+  tasks:
+  - name: To print when matches to condition
+    debug:
+      msg: "Hi to print {{num_live_sessions}}" 
+      when: num_live_sessions > 4
