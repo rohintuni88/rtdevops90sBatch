@@ -5,8 +5,15 @@
   vars:
    COURSE: "DevOps"
    Time: 120
-   is_live: true 
+   is_live: true
+   topics:
+   - Linux
+   - Shell
+   - Ansible
+   more_courses:
+    key1: "Docker"
+    key2: "CICD"  
   tasks:
    - name: hello ansible
      debug:
-      msg: "hello Ansible Playbook | {{COURSE}} | {{Time}}" 
+      msg: "hello Ansible Playbook | {{COURSE}} | {{Time}} | {{is_live}} | {{topics}} | {{more_courses}}" 
