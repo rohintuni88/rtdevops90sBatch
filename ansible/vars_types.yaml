@@ -8,6 +8,7 @@
   - course_vars.yaml
   vars:
     place: khammam
+    cmd_enter: "CMD_PROMPT"
   vars_prompt:
   - name: username
     prompt: "Please enter UN"
@@ -29,6 +30,8 @@
   - name: prompt enter
     debug:
       msg: "please enter {{username}} and {{password}} and {{cmd_enter}}"
+      # CMD to RUN for COMMAND VARIBALE: ansible-playbook -i inventory.ini cmd_enter=CMD vars_types.yaml
+
    
 
 # Above code once RUN, here is the Output:
