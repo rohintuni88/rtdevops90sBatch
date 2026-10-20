@@ -11,7 +11,7 @@
      - shell
      - Ansible 
   - name: to print loops
-    pacakage:
+    package:
       name: "{{item}}"
       state: present
     loop:
