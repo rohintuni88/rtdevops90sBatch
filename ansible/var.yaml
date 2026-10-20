@@ -6,13 +6,15 @@
     # name: "DevOps"    # play level variable
     # age: 25
   - course_vars.yaml
+  vars:
+    place: khammam
   tasks:
   - name: print some text
     vars:
      name: "DevOps with AIOps"   # Task level variable
      age: 40
     debug:
-     msg: "Hi {{name}}, and I am {{age}}"
+     msg: "Hi {{name}}, and I am {{age}} from {{place}}"
   - name: To install nginx
     package:
       name: "{{software}}"
