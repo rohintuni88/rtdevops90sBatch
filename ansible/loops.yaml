@@ -6,7 +6,7 @@
   - name: to print loops
     debug:
      msg: "To print loops {{item}}"
-  loop:
+  loops:
    linix
    shell
    Ansible 
