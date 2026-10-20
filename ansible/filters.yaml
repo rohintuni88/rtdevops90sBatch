@@ -1,0 +1,10 @@
+# filters or Functions both are same.
+- name: This is Functions or Filters
+  hosts: localhost
+  connection: local
+  become: yes
+  vars:
+   courses: DevOps, AIops, Observability, Monitoring
+  tasks:
+  debug:
+   msg: "Courses are {{ courses | split(',')}}"
