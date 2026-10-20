@@ -2,8 +2,9 @@
   hosts: frontend
   connection: local
   vars:
-    name: "DevOps"    # play level variable
-    age: 25
+    # name: "DevOps"    # play level variable
+    # age: 25
+    course_vars.yaml
   tasks:
   - name: print some text
     vars:

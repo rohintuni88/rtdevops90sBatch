@@ -1,0 +1,26 @@
+AMI
+ AMIs AVAILABLE ONLY IN US EAST (N. VIRGINIA) — us-east-1 :rotating_light:
+
+
+AMI Name: Redhat-9-DevOps-Practice
+AMI ID: ami-0055977a6e828a4f4
+Username: ec2-user
+Password: DevOps321
+
+
+:small_blue_diamond: Red Hat 10 — Updated AMI
+
+AMI Name: Redhat-10-DevOps-Practice
+AMI ID: ami-0eec78ea4cbaaf5bd
+Username: ec2-user
+Password: DevOps321
+
+
+:warning: Important Notice:
+The previously shared Red Hat 9 AMI ID ami-0220d79f3f480ecf5 is showing the error: “AMI has been deleted or marked private.”
+
+:white_check_mark: Action Required:
+
+Select the US East (N. Virginia) — us-east-1 region before launching an EC2 instance.
+Use the updated AMI IDs listed above.
+Do not expect these custom AMIs to be available in other AWS regions.

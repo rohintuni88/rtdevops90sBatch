@@ -1,0 +1,28 @@
+- name: Install mongoDB
+  host: local
+  connection: local
+  become: yes
+  tasks:
+   - name: To insall mongodb
+     package:
+       name: mongodb
+       state: present
+   - name: To install nginx
+     package:
+       name: nginx
+       state: present
+   - name: to restart and enable
+     service:
+       name: nginx
+       state: started
+       enable: yes
+   - name: check port
+     command:
+       name: netstat -lntp
+       register: netstat_output
+   - name: check status
+     service:
+       name: nginx
+       status: started
+    
+      
