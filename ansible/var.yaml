@@ -1,5 +1,5 @@
 - name: varibales
-  hosts: frontend
+  hosts: local
   connection: local
   vars:
     # name: "DevOps"    # play level variable
