@@ -1,7 +1,8 @@
 - name: ansible playbook
-  hosts: frontend
+  hosts: localhost
+  connection: local
   become: yes
   tasks:
-    - name: hello ansible
-      debug:
-        msg: "hello Ansible Playbook" 
+   - name: hello ansible
+     debug:
+      msg: "hello Ansible Playbook" 
