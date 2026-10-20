@@ -3,7 +3,7 @@
   connection: local
   vars:
    num_live_sessions: 5
-   even_or_odd: 24
+   even_or_odd: 249
   tasks:
   - name: To print when matches to condition
     debug:
@@ -14,7 +14,7 @@
     debug:
      msg: "even {{even_or_odd}}"
     when: even_or_odd % 2 == 0
-    
+
   - name: even or odd
     debug:
      msg: "odd {{even_or_odd}}"
