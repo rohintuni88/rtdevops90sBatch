@@ -7,4 +7,4 @@
   - name: To print when matches to condition
     debug:
      msg: "Hi to print {{num_live_sessions}}" 
-    when: num_live_sessions > 4
+    when: num_live_sessions > 40
