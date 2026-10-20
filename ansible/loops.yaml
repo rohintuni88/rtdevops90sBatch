@@ -1,0 +1,12 @@
+- name: this is loops
+  hosts: localhost
+  connection: host
+  become: yes
+  tasks:
+  - name: to print loops
+    debug:
+     msg: "To print loops {{item}}"
+  loop:
+   linix
+   shell
+   Ansible 
