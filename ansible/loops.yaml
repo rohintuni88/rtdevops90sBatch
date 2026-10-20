@@ -5,8 +5,8 @@
   tasks:
   - name: to print loops
     debug:
-     msg: "To print loops {{item}}"
-  loop:
-  - linix
-  - shell
-  - Ansible 
+      msg: "To print loops {{item}}"
+    loop:
+     - linix
+     - shell
+     - Ansible 
