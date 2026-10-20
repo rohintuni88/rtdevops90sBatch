@@ -1,5 +1,5 @@
 - name: varibales
-  hosts: local
+  hosts: localhost
   connection: local
   vars:
     # name: "DevOps"    # play level variable
@@ -8,7 +8,7 @@
   tasks:
   - name: print some text
     vars:
-      name: "DevOps with AIOps"   # Task level variable
+     name: "DevOps with AIOps"   # Task level variable
     debug:
-      msg: "Hi {{name}}, and I am {{age}}"
+     msg: "Hi {{name}}, and I am {{age}}"
    
