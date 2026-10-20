@@ -8,6 +8,13 @@
   - course_vars.yaml
   vars:
     place: khammam
+  vars_prompt:
+  - name: username
+    prompt: "Please enter UN"
+    private: false
+  - name: password
+    prompt: "enter password"
+    private: true
   tasks:
   - name: print some text
     vars:
@@ -19,4 +26,7 @@
     package:
       name: "{{software}}"
       state: present
+  - name: prompt enter
+    debug:
+      msg: "please enter {{username}} and {{password}}"
    
