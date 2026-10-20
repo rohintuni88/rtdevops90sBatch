@@ -1,6 +1,6 @@
 - name: this is loops
   hosts: localhost
-  connection: host
+  connection: local
   become: yes
   tasks:
   - name: to print loops
