@@ -1,7 +1,7 @@
 - name: varibales
   hosts: localhost
   connection: local
-  vars:
+  vars_files:
     # name: "DevOps"    # play level variable
     # age: 25
   - course_vars.yaml
