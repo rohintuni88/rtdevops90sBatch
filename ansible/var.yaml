@@ -9,6 +9,7 @@
   - name: print some text
     vars:
      name: "DevOps with AIOps"   # Task level variable
+     age: 40
     debug:
      msg: "Hi {{name}}, and I am {{age}}"
    
