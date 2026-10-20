@@ -6,5 +6,6 @@
   vars:
    courses: DevOps, AIops, Observability, Monitoring
   tasks:
-  debug:
-   msg: "Courses are {{ courses | split(',')}}"
+   - name: to print
+     debug:
+      msg: "Courses are {{ courses | split(',')}}"
