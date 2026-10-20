@@ -12,4 +12,8 @@
      age: 40
     debug:
      msg: "Hi {{name}}, and I am {{age}}"
+  - name: To install nginx
+    package:
+    - name: "{{software}}"
+      state: present
    
