@@ -1,6 +1,7 @@
 - name: varibales
   hosts: localhost
   connection: local
+  become: yes
   vars_files:
     # name: "DevOps"    # play level variable
     # age: 25
