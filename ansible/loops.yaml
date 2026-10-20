@@ -10,7 +10,7 @@
      - linix
      - shell
      - Ansible 
-  - name: to print loops
+  - name: to install
     package:
       name: "{{item}}"
       state: present
@@ -18,3 +18,11 @@
      - git
      - nginx
      - zip 
+  - name: to install and Remove
+    package:
+      name: "{{item.name}}"
+      state: "{{item.state}}"
+    loop:
+     - {{name: "nginx", state: "absent"}}
+     - {{name: "zip", state: "absent"}}
+     - {{name: "mysql", state: "present"}}
