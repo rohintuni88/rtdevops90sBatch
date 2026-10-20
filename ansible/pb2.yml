@@ -1,5 +1,5 @@
 - name: Install mongoDB
-  host: localhost
+  hosts: localhost
   connection: localhost
   become: yes
   tasks:
