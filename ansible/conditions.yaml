@@ -9,7 +9,13 @@
     debug:
      msg: "Hi to print {{num_live_sessions}}" 
     when: num_live_sessions > 40
+    
   - name: even or odd
     debug:
-     msg: "even or odd {{even_or_odd}}"
-    when: even_or_odd % 2
+     msg: "even {{even_or_odd}}"
+    when: even_or_odd % 2 == 0
+    
+  - name: even or odd
+    debug:
+     msg: "odd {{even_or_odd}}"
+    when: even_or_odd % 2 != 0
