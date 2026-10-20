@@ -2,7 +2,11 @@
   hosts: localhost
   connection: local
   become: yes
+  vars:
+   COURSE: "DevOps"
+   Time: 120
+   is_live: true 
   tasks:
    - name: hello ansible
      debug:
-      msg: "hello Ansible Playbook" 
+      msg: "hello Ansible Playbook | {{COURSE}} | {{Time}}" 
