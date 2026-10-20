@@ -28,7 +28,7 @@
       state: present
   - name: prompt enter
     debug:
-      msg: "please enter {{username}} and {{password}}"
+      msg: "please enter {{username}} and {{password}} and {{cmd_enter}}"
    
 
 # Above code once RUN, here is the Output:
