@@ -10,3 +10,11 @@
      - linix
      - shell
      - Ansible 
+  - name: to print loops
+    pacakage:
+      name: "{{item}}"
+      state: present
+    loop:
+     - git
+     - nginx
+     - zip 
