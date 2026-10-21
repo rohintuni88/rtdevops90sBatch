@@ -17,4 +17,4 @@
 
   - name: Print Output
     debug:
-      msg: Tp Print "{{ec2_output}}"
+      msg: Tp Print "{{ec2_output | json}}"
