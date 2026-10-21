@@ -33,6 +33,7 @@
      type: A
      ttl: 1
      value: "{{item.instances[0].private_ip_address }}"
+     overwrite: true  # if already got record, it will overwrite it.
     loop: "{{ec2_output.results}}"
     # when: item.item != "frontend"  If you dont want Private IP for frontend then give this code
 
@@ -44,5 +45,6 @@
      type: A
      ttl: 1
      value: "{{item.instances[0].public_ip_address }}"
+     overwrite: true  # if already got record, it will overwrite it.
     loop: "{{ec2_output.results}}"
     when: item.item == "frontend"  # this will take the public ip for frontend
