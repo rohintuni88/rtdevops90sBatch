@@ -4,6 +4,7 @@
   vars:
    instances: ["mongodb", "reddis"]
    image_id: ami-0055977a6e828a4f4
+   domain_name: rtdevops.online
   tasks:
   - name: create ec2 instances
     amazon.aws.ec2_instance:
@@ -15,6 +16,33 @@
     loop: "{{instances}}"
     register: ec2_output  # to capture module output
 
-  - name: Print Output
+  # - name: Print Output
+  #   debug:
+  #     msg: Tp Print "{{ec2_output }}"
+
+  - name: To create Route 53 Records
     debug:
-      msg: Tp Print "{{ec2_output | to_nice_json}}"
+     msg: "Print Instance Name: {{item.item}} PrivateIP: {{item.instances[0].private_ip_address }}"
+    loop: "{{ec2_output.results}}"
+  
+  - name: Create r53 records for DB and Backend
+    amazon.aws.route53:
+     state: present
+     zone: "{{domain_name}}"
+     record: "{{item.item}}.{{domain_name}}"   #mongodb.rtdevops.online
+     type: A
+     ttl: 1
+     value: "{{item.instances[0].private_ip_address }}"
+    loop: "{{ec2_output.results}}"
+    # when: item.item != "frontend"  If you dont want Private IP for frontend then give this code
+
+  - name: Create r53 records for DB and Backend
+    amazon.aws.route53:
+     state: present
+     zone: "{{domain_name}}"
+     record: "{{domain_name}}"   #rtdevops.online
+     type: A
+     ttl: 1
+     value: "{{item.instances[0].public_ip_address }}"
+    loop: "{{ec2_output.results}}"
+    when: item.item == "frontend"  # this will take the public ip for frontend

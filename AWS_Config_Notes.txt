@@ -1,0 +1,14 @@
+In AWS --> Create IAM Role --> Create Access Key, Secure Key
+cmd: aws configure
+Enter: Access Key, Secure Key, Region and Format.
+Once done all
+
+Verify with this command: aws sts get-caller-identity  
+if aws configure is sucess the below Output will shows:
+
+enter cmd: aws sts get-caller-identity
+{
+    "UserId": "AI........ZR.......7HBO",
+    "Account": "571000........",
+    "Arn": "arn:aws:iam::571000.....:user/robo-iam"
+}
