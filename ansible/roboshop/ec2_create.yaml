@@ -12,7 +12,6 @@
      image_id: "{{image_id}}"
      security_groups: # if multiple use security_groups, otherwise 1 use for security group
      - "roboshop-{{item}}"
-     - roboshop-common
     loop: "{{instances}}"
     register: ec2_output  # to capture module output
 
