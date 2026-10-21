@@ -1,5 +1,5 @@
 - name: To create ec2 instances and D53 DNS in AWS
-  hosts: localhost
+  hosts: local
   connection: local
   become: yes
   vars:
