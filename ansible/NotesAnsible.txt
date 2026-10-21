@@ -1,0 +1,42 @@
+Ansibe is the Config mgnt system.
+
+inventory.ini file
+[frontend]
+134.56.78.90
+
+[user]
+134.56.78.94
+
+[cart]
+134.56.78.98
+; group of groups
+[roboshop:children]
+frontend
+user
+cart
+
+
+playbook.yaml
+
+- name: ping in server
+  hosts: frontend  --> target server  # frontend or cart  or user
+  tasks:   --> List of tasks   # tasks also called modules / collections
+  - name: ping the server
+    ping: 
+
+    To run the Ansibe via command line:
+     ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 01-playbook.yaml
+
+debug:  --> To print th r text
+
+Variables Types:
+
+  inventory_vars
+  vars_files
+  host_vars  --> inside inventory.ini we mention Host variables: 
+    ex: [frontend]
+        198.6.5.90 COURSE: "This value is for NODE-1"
+
+        [frontend:vars]
+        COURSE: "this is common for all hosts inside frontend"
+                                                                     

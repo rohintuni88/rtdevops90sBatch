@@ -1,7 +1,38 @@
 - name: ansible playbook
-  hosts: frontend
+  hosts: localhost
+  connection: local
   become: yes
+  vars:
+   COURSE: "DevOps"
+   Time: 120
+   is_live: true
+   topics:
+   - Linux
+   - Shell
+   - Ansible
+   more_courses:
+    key1: "Docker"
+    key2: "CICD"  
   tasks:
-    - name: hello ansible
-      debug:
-        msg: "hello Ansible Playbook" 
+   - name: hello ansible
+     debug:
+      msg: "hello Ansible Playbook | {{COURSE}} | {{Time}} | {{is_live}} | {{topics}} | {{more_courses}}" 
+
+
+
+# OutPut:
+      
+# [ ec2-user@ip-172-31-24-113 ~/rtdevops90sBatch/ansible ]$ ansible-playbook -i inventory.ini playbook.yaml
+
+# PLAY [ansible playbook] **********************************************************************************************************************************************************************************************
+
+# TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************
+# ok: [local]
+
+# TASK [hello ansible] *************************************************************************************************************************************************************************************************
+# ok: [local] => {
+#     "msg": "hello Ansible Playbook | DevOps | 120 | True | ['Linux', 'Shell', 'Ansible'] | {'key1': 'Docker', 'key2': 'CICD'}"
+# }
+
+# PLAY RECAP ***********************************************************************************************************************************************************************************************************
+# local                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0

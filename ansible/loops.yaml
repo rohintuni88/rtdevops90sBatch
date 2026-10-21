@@ -1,0 +1,63 @@
+- name: this is loops
+  hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+  - name: to print loops
+    debug:
+      msg: "To print loops {{item}}"
+    loop:
+     - linix
+     - shell
+     - Ansible 
+  - name: to install
+    package:
+      name: "{{item}}"
+      state: present
+    loop:
+     - git
+     - nginx
+     - zip 
+  - name: to install and Remove
+    package:
+      name: "{{item.name}}"
+      state: "{{item.state}}"
+    loop:
+     - {name: "nginx", state: "absent"}
+     - {name: "zip", state: "absent"}
+     - {name: "mysql", state: "present"}
+
+
+#      Output:
+
+     
+# [ ec2-user@ip-172-31-20-27 ~/rtdevops90sBatch/ansible ]$ ansible-playbook -i inventory.ini loops.yaml
+
+# PLAY [this is loops] *************************************************************************************************************************************************************************************************
+
+# TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************
+# ok: [local]
+
+# TASK [to print loops] ************************************************************************************************************************************************************************************************
+# ok: [local] => (item=linix) => {
+#     "msg": "To print loops linix"
+# }
+# ok: [local] => (item=shell) => {
+#     "msg": "To print loops shell"
+# }
+# ok: [local] => (item=Ansible) => {
+#     "msg": "To print loops Ansible"
+# }
+
+# TASK [to install] ****************************************************************************************************************************************************************************************************
+# ok: [local] => (item=git)
+# ok: [local] => (item=nginx)
+# ok: [local] => (item=zip)
+
+# TASK [to install and Remove] *****************************************************************************************************************************************************************************************
+# changed: [local] => (item={'name': 'nginx', 'state': 'absent'})
+# changed: [local] => (item={'name': 'zip', 'state': 'absent'})
+# changed: [local] => (item={'name': 'mysql', 'state': 'present'})
+
+# PLAY RECAP ***********************************************************************************************************************************************************************************************************
+# local                      : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
