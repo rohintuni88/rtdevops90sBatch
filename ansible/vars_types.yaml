@@ -1,0 +1,62 @@
+- name: variables
+  hosts: localhost
+  connection: local
+  become: yes
+  vars_files:
+    # name: "DevOps"    # play level variable
+    # age: 25
+  - course_vars.yaml
+  vars:
+    place: khammam
+    cmd_enter: "CMD_PROMPT"
+  vars_prompt:
+  - name: username
+    prompt: "Please enter UN"
+    private: false
+  - name: password
+    prompt: "enter password"
+    private: true
+  tasks:
+  - name: print some text
+    vars:
+     name: "DevOps with AIOps"   # Task level variable
+     age: 40
+    debug:
+     msg: "Hi {{name}}, and I am {{age}} from {{place}}"
+  - name: To install nginx
+    package:
+      name: "{{software}}"
+      state: present
+  - name: prompt enter
+    debug:
+      msg: "please enter {{username}} and {{password}} and {{cmd_enter}}"
+      # CMD to RUN for COMMAND VARIBALE: ansible-playbook -i inventory.ini cmd_enter=CMD vars_types.yaml
+
+   
+
+# Above code once RUN, here is the Output:
+# [ ec2-user@ip-172-31-24-113 ~/rtdevops90sBatch/ansible ]$ ansible-playbook -i inventory.ini var.yaml
+#    Please enter UN: Rohin
+#    enter password:
+# [WARNING]: Found variable using reserved name: name
+
+# PLAY [varibales] *****************************************************************************************************************************************************************************************************
+
+# TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************
+# ok: [local]
+
+# TASK [print some text] ***********************************************************************************************************************************************************************************************
+# ok: [local] => {
+#     "msg": "Hi DevOps with AIOps, and I am 40 from khammam"
+# }
+
+# TASK [To install nginx] **********************************************************************************************************************************************************************************************
+# ok: [local]
+
+# TASK [prompt enter] **************************************************************************************************************************************************************************************************
+# ok: [local] => {
+#     "msg": "please enter Rohin and Devops321"
+# }
+
+# PLAY RECAP ***********************************************************************************************************************************************************************************************************
+# local                      : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
