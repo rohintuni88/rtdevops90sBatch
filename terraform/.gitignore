@@ -1,0 +1,12 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Variable files
+*.tfvars
+*.tfvars.json
+
+# VS Code
+.vscode/
